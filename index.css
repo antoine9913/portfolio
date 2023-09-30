@@ -1,0 +1,147 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #081b29;
+}
+
+.wrapper {
+    position: relative;
+    width: 66rem;
+    height: 45rem;
+    padding: 2rem;
+}
+
+.cover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background: #00abf0;
+    box-shadow: 0 0 0.6rem rgba(0, 0, 0, 0.2);
+    border-top-left-radius: 0.6rem;
+    border-bottom-left-radius: 0.6rem;
+    transform-origin: right;
+}
+
+.cover.cover_left {
+    z-index: -1;
+}
+
+.cover.cover_right.turn {
+    transform: rotateY(180deg);
+}
+
+.book {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+.book .book_page {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    background: white;
+    box-shadow: 0 0 0.6rem rgba(0, 0, 0, 0.1);
+    display: flex;
+    padding: 2rem;
+}
+
+.profile_page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile_page img {
+    max-width: 180px;
+    border-radius: 50%;
+    border: 0.25rem solid #00abf0;
+    margin-bottom: 0.8rem;
+}
+
+.profile_page h1 {
+    font-size: 2.3rem;
+    line-height: 1;
+}
+
+.profile_page h3 {
+    font-size: 1.6rem;
+    color: #00abf0;
+}
+
+.profile_page .social_media {
+    margin: 0.6rem 0 0.8rem;
+}
+
+.profile_page .social_media a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    background: transparent;
+    border: 0.15rem solid #00abf0;
+    color: #00abf0;
+    font-size: 1.3rem;
+    border-radius: 50%;
+    margin: 0 0.2rem;
+    transition: 0.5s;
+}
+
+.profile_page .social_media a:hover {
+    background: #00abf0;
+    color: white;
+}
+
+.profile_page p {
+    text-align: justify;
+}
+
+.profile_page .btn_box {
+    margin-top: 1.2rem;
+}
+
+.btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 9.5rem;
+    height: 3rem;
+    background: #00abf0;
+    border: 0.15rem solid #00abf0;
+    border-radius: 0.3rem;
+    color: white;
+    font-size: 500;
+    margin: 0 1rem;
+    transition: 0.5s;
+}
+
+.btn:hover {
+    background: transparent;
+    color: #00abf0;
+}
+
+.btn_box .btn:nth-child(2) {
+    background: transparent;
+    color: #00abf0;
+}
+
+.btn_box .btn:nth-child(2):hover {
+    background: #00abf0;
+    color: white;
+}
