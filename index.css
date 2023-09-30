@@ -145,3 +145,8 @@ body {
     background: #00abf0;
     color: white;
 }
+
+.book_page .page_right {
+    position: absolute;
+    right: 0;
+}
