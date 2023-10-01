@@ -48,6 +48,7 @@ body {
     width: 100%;
     height: 100%;
     display: flex;
+    perspective: 250rem;
 }
 
 .book .book_page {
@@ -146,7 +147,90 @@ body {
     color: white;
 }
 
-.book_page .page_right {
+.book_page.page_right {
     position: absolute;
     right: 0;
+    transform-style: preserve-3d;
+    transform-origin: left;
+    transition: transform 1s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.book_page.page_right.turn {
+    transform: rotateY(-180deg);
+}
+
+.book_page .page_front,
+.book_page .page_back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    padding: 1.5rem 2rem;
+}
+
+.book_page .page_front {
+    transform: rotateY(0deg) translateZ(1px);
+}
+
+.book_page .page_back {
+    transform: rotateY(180deg) translateZ(1px);
+}
+
+.title {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.expeduc_box {
+    border-left: #00abf0;
+}
+
+.expeduc_box .expeduc_content {
+    position: relative;
+    padding-left: 1.6rem;
+    padding-bottom: 1.2rem;
+    border-left: 0.15rem solid #00abf0;
+}
+
+.expeduc_box .expeduc_content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -0.65rem;
+    width: 1.2rem;
+    height: 1.2rem;
+    background: #00abf0;
+    border-radius: 50%;
+}
+
+.expeduc_content .year {
+    color: #00abf0;
+}
+
+.expeduc_content .year i {
+    margin-right: 0.4rem;
+}
+
+.book .navbar {
+    position: absolute;
+    top: 100px;
+    right: -110px;
+}
+
+.book .navbar .navbar_btn {
+    width: 6rem;
+    height: 4rem;
+    background: blue;
+    border-radius: 1rem;
+    font-size: 1rem;
+    color: white;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.navbar .navbar_btn:hover {
+    background: white;
+    color: #00abf0;
 }
