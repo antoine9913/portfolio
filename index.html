@@ -12,7 +12,7 @@
     
     <div class="wrapper">
         <div class="cover cover_left"></div>
-        <div class="cover cover_right turn"></div>
+        <div class="cover cover_right"></div>
 
         <div class="book">
 
@@ -32,8 +32,8 @@
                     <p>Bonjour je m'apelle Frachisse--Béchu Antoine, je suis web developpeur Junior Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minus voluptatem ullam dolores quisquam voluptatibus. Perspiciatis nulla repellendus, natus voluptatum facere voluptatem in? Autem, voluptas recusandae aliquam earum magnam sint asperiores quisquam exercitationem minima, in numquam eos eaque deserunt.</p>
 
                     <div class="btn_box">
-                        <a href="" class="btn">Download cv</a>
-                        <a href="" class="btn contact">Contact me</a>
+                        <a href="#" class="btn">Télécharger mon CV</a>
+                        <a href="#" class="btn contact_me">Me contactez</a>
                     </div>
                 </div>
             </div>
@@ -77,7 +77,7 @@
 
                     <div class="navbar">
                         <div class="navbar_content">
-                            <button class="navbar_btn" data-page="turn1">Experiences</button>
+                            <button class="navbar_btn" data-page="turn1"><i class="fa-solid fa-chevron-left"></i></button>
                         </div>
                     </div>
 
@@ -109,21 +109,49 @@
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam accusamus esse similique reiciendis necessitatibus quis quisquam. Ab harum corrupti officia omnis molestiae expedita voluptatem sequi?</p>
                         </div>
                     </div>
-
-                    <div class="expeduc_box">
-                        <div class="expeduc_content">
-                            <span class="year"><i class="fa-solid fa-calendar-days"></i>2019 - 2023</span>
-                            <h3>Soudeur Metallier - Metallerie Industriel Fustier</h3>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam accusamus esse similique reiciendis necessitatibus quis quisquam. Ab harum corrupti officia omnis molestiae expedita voluptatem sequi?</p>
-                        </div>
-                    </div>
                 </div>
 
             </div>
 
-            <div class="book_page page_right " id="turn2">
+            <div class="book_page page_right turn" id="turn2">
 
                 <div class="page_front">
+                    <h1 class="title">Etudes</h1>
+
+                    <div class="expeduc_box">
+                        <div class="expeduc_content">
+                            <span class="year"><i class="fa-solid fa-calendar-days"></i>2015</span>
+                            <h3>Stage BAC Pro MEI - SPIT</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam accusamus esse similique reiciendis necessitatibus quis quisquam. Ab harum corrupti officia omnis molestiae expedita voluptatem sequi?</p>
+                        </div>
+                    </div>
+
+                    <div class="expeduc_box">
+                        <div class="expeduc_content">
+                            <span class="year"><i class="fa-solid fa-calendar-days"></i>2016</span>
+                            <h3>Stage BAC Pro MEI - SPIT</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam accusamus esse similique reiciendis necessitatibus quis quisquam. Ab harum corrupti officia omnis molestiae expedita voluptatem sequi?</p>
+                        </div>
+                    </div>
+
+                    <div class="expeduc_box">
+                        <div class="expeduc_content">
+                            <span class="year"><i class="fa-solid fa-calendar-days"></i>2018 - 2019</span>
+                            <h3>Apprenti Soudeur - Brunel Construction Metallique</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam accusamus esse similique reiciendis necessitatibus quis quisquam. Ab harum corrupti officia omnis molestiae expedita voluptatem sequi?</p>
+                        </div>
+                    </div>
+
+                    <div class="navbar">
+                        <div class="navbar_content">
+                            <button class="navbar_btn" data-page="turn2"><i class="fa-solid fa-chevron-left"></i></button>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="page_back">
+
                     <h1 class="title">Mes compétences</h1>
 
                     <div class="skill_box">
@@ -154,16 +182,64 @@
                         </div>
                     
                     </div>
+
                 </div>
 
-                <div class="page_back">
+            </div>
+
+            <div class="book_page page_right turn" id="turn3">
+
+                <div class="page_front">
                     <h1 class="title">Dernier projet</h1>
 
-                    <div class="lastproject_box">
-                        <div class="lastproject_content">
+                    <div class="portfolio_box">
 
+                        <div class="img_box">
+                            <img src="./photos/portfolio.png" alt="">
+                        </div>
+
+                        <div class="info_box">
+                            <div class="info_title">
+                                <h3>Portfolio</h3>
+                                <a href="#">Live preview<i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                            </div>
+                            <p>tech used:</p>
+                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero culpa harum itaque laborum incidunt asperiores dolore, quos dolores? Quibusdam, dolorum!</p>
+                        </div>
+    
+                        <div class="btn_box">
+                            <a href="#" class="btn">Source Code</a>
+                            <a href="#" class="btn">More Project</a>
+                        </div>
+
+                    </div>
+
+                    <div class="navbar">
+                        <div class="navbar_content">
+                            <button class="navbar_btn" data-page="turn3"><i class="fa-solid fa-chevron-left"></i></button>
                         </div>
                     </div>
+
+                </div>
+
+
+                <div class="page_back">
+                    <h1 class="title">Contact</h1>
+
+                    <div class="contact_box">
+                        <form action="javascript:sendMail()">
+                            <input id="name" type="text" class="field" placeholder="Nom Complet" required>
+                            <input type="email" class="field" placeholder="Adresse Mail" required>
+                            <textarea name="" id="message" cols="30" rows="10" class="field" placeholder="Votre Message" required></textarea>
+                            <input id="btn-mail" type="submit" class="btn" value="Envoyez votre message">
+                            <input id="email" type="submit" class="btn" value="antoinefb9913@gmail.com">
+                        </form>
+                    </div>
+
+                    <a href="#" class="back_profil">
+                        <p>Profil</p>
+                        <i class="fa-solid fa-user"></i>
+                    </a>
                 </div>
 
             </div>
@@ -171,7 +247,7 @@
         </div>
     </div>
 
-    <script src="index.js"></script>
+    <script src="script.js"></script>
 
 </body>
 </html>

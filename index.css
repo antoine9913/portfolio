@@ -7,12 +7,25 @@
     outline: none;
 }
 
+:root {
+    --bg-color: #081B29;
+    --main-color: #FFB777;
+    --text-color: #333;
+    --second-text-color: #555;
+    --white-color: #FFF;
+    --cover-color: linear-gradient(45deg, #FFB777, #e1a26a);
+    --pages-color: linear-gradient(45deg, #FFF, #DDD);
+    --border: 0.125rem solid #FFB777;
+    --box-shadow: 0 0 0.6rem rgba(0, 0, 0, 0.2);
+}
+
 body {
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: #081b29;
+    background: var(--bg-color);
+    overflow: hidden;
 }
 
 .wrapper {
@@ -20,6 +33,19 @@ body {
     width: 66rem;
     height: 45rem;
     padding: 2rem;
+    perspective: 250rem;
+    animation: show-animate 2s forwards;
+}
+
+@keyframes show-animate{
+    0%,30% {
+        opacity: 0;
+        transform: rotate(-20deg);
+    }
+    100% {
+        opacity: 1;
+        transform: rotate(0deg);
+    }
 }
 
 .cover {
@@ -28,8 +54,8 @@ body {
     left: 0;
     width: 50%;
     height: 100%;
-    background: #00abf0;
-    box-shadow: 0 0 0.6rem rgba(0, 0, 0, 0.2);
+    background: var(--main-color);
+    box-shadow: var( --box-shadow);
     border-top-left-radius: 0.6rem;
     border-bottom-left-radius: 0.6rem;
     transform-origin: right;
@@ -37,6 +63,11 @@ body {
 
 .cover.cover_left {
     z-index: -1;
+}
+
+.cover.cover_right {
+    z-index: 100;
+    transition: transform 1s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 
 .cover.cover_right.turn {
@@ -55,10 +86,14 @@ body {
     position: absolute;
     width: 50%;
     height: 100%;
-    background: white;
+    background: var( --white-color);
     box-shadow: 0 0 0.6rem rgba(0, 0, 0, 0.1);
     display: flex;
     padding: 2rem;
+}
+
+.book_page.page_left {
+    box-shadow: -0.6rem 0.6rem 0.6rem rgba(0, 0, 0, 0.1);
 }
 
 .profile_page {
@@ -71,7 +106,7 @@ body {
 .profile_page img {
     max-width: 180px;
     border-radius: 50%;
-    border: 0.25rem solid #00abf0;
+    border: 0.25rem solid var(--main-color);
     margin-bottom: 0.8rem;
 }
 
@@ -82,7 +117,7 @@ body {
 
 .profile_page h3 {
     font-size: 1.6rem;
-    color: #00abf0;
+    color: var(--main-color);
 }
 
 .profile_page .social_media {
@@ -96,8 +131,8 @@ body {
     width: 2.5rem;
     height: 2.5rem;
     background: transparent;
-    border: 0.15rem solid #00abf0;
-    color: #00abf0;
+    border: 0.15rem solid var(--main-color);
+    color: var(--main-color);
     font-size: 1.3rem;
     border-radius: 50%;
     margin: 0 0.2rem;
@@ -105,8 +140,8 @@ body {
 }
 
 .profile_page .social_media a:hover {
-    background: #00abf0;
-    color: white;
+    background: var(--main-color);
+    color: var( --white-color);
 }
 
 .profile_page p {
@@ -123,10 +158,10 @@ body {
     align-items: center;
     width: 9.5rem;
     height: 3rem;
-    background: #00abf0;
-    border: 0.15rem solid #00abf0;
+    background: var(--main-color);
+    border: 0.15rem solid var(--main-color);
     border-radius: 0.3rem;
-    color: white;
+    color: var( --white-color);
     font-size: 500;
     margin: 0 1rem;
     transition: 0.5s;
@@ -134,17 +169,17 @@ body {
 
 .btn:hover {
     background: transparent;
-    color: #00abf0;
+    color: var(--main-color);
 }
 
 .btn_box .btn:nth-child(2) {
     background: transparent;
-    color: #00abf0;
+    color: var(--main-color);
 }
 
 .btn_box .btn:nth-child(2):hover {
-    background: #00abf0;
-    color: white;
+    background: var(--main-color);
+    color: var( --white-color);
 }
 
 .book_page.page_right {
@@ -166,7 +201,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: white;
+    background: var( --white-color);
     padding: 1.5rem 2rem;
 }
 
@@ -184,14 +219,14 @@ body {
 }
 
 .expeduc_box {
-    border-left: #00abf0;
+    border-left: var(--main-color);
 }
 
 .expeduc_box .expeduc_content {
     position: relative;
     padding-left: 1.6rem;
     padding-bottom: 1.2rem;
-    border-left: 0.15rem solid #00abf0;
+    border-left: 0.15rem solid var(--main-color);
 }
 
 .expeduc_box .expeduc_content::before {
@@ -201,12 +236,12 @@ body {
     left: -0.65rem;
     width: 1.2rem;
     height: 1.2rem;
-    background: #00abf0;
+    background: var(--main-color);
     border-radius: 50%;
 }
 
 .expeduc_content .year {
-    color: #00abf0;
+    color: var(--main-color);
 }
 
 .expeduc_content .year i {
@@ -215,22 +250,200 @@ body {
 
 .book .navbar {
     position: absolute;
-    top: 100px;
-    right: -110px;
+    top: 50%;
+    right: -32px;
+
 }
 
-.book .navbar .navbar_btn {
-    width: 6rem;
+.book .navbar .navbar_btn {    
+    width: 2rem;
     height: 4rem;
-    background: blue;
-    border-radius: 1rem;
+    background: var( --white-color);
+    border-radius: 0 1rem 1rem 0;
     font-size: 1rem;
-    color: white;
+    color: var(--main-color);
     cursor: pointer;
     transition: 0.5s;
+
 }
 
 .navbar .navbar_btn:hover {
-    background: white;
-    color: #00abf0;
+    background: var(--main-color);
+    color: var( --white-color);
+}
+
+.skill_box {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.skill_box .skill_content {
+    flex: 1 1 20rem;
+}
+
+.skill_content h3 {
+    font-size: 1.3rem;
+    line-height: 1;
+    margin-bottom: 0.6rem;
+}
+
+.skill_content .content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+}
+
+.skill_content .content span {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 6rem;
+    height: 5rem;
+    border: 0.15rem solid var(--main-color);
+    border-radius: 0.3rem;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+
+.skill_content .content span:hover {
+    box-shadow: 0px 0px 6px 1px black;
+}
+
+.skill_content .content span i {
+    font-size: 3rem;
+    color: var(--main-color);
+}
+
+.portfolio_box .img_box {
+    display: flex;
+    width: 100%;
+    height: 15rem;
+    border: 0.15rem solid var(--main-color);
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+
+.portfolio_box .img_box img {
+    width: 100%;
+    object-fit: cover;
+    transition: 0.5s ease;
+}
+
+.portfolio_box .img_box:hover img {
+    transform: scale(1.1);
+}
+
+.portfolio_box .info_box {
+    margin: 1rem 0 1.5rem;
+}
+
+.portfolio_box .info_box .info_title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.portfolio_box .info_box .info_title h3 {
+    font-size: 1.3rem;
+}
+
+.portfolio_box .info_box .info_title a {
+    display: flex;
+    align-items: center;
+    color: var(--main-color);
+}
+
+.portfolio_box .info_box .info_title a i {
+    margin-left: 0.3rem;
+}
+
+.portfolio_box .info_box p:nth-of-type(1) {
+    font-weight: 600;
+}
+
+.portfolio_box .btn_box {
+    display: flex;
+    justify-content: center;
+}
+
+.portfolio_box .btn_box .btn {
+    margin: 0 1.15rem;
+}
+
+.contact_box {
+    text-align: center;
+    z-index: auto;
+}
+
+.contact_box .field {
+    width: 100%;
+    background: transparent;
+    border: 0.15rem solid var(--main-color);
+    border-radius: 0.3rem;
+    padding: 0.8rem;
+    font-size: 1rem;
+    color: var(--bg-color);
+    margin-bottom: 1.5rem;
+}
+
+.contact_box .field::placeholder {
+    color: var(--bg-color);
+}
+
+.contact_box textarea {
+    resize: none;
+    height: 15rem;
+}
+
+.contact_box .btn {
+    cursor: pointer;
+}
+
+.contact_box #email {
+    position: absolute;
+    left: 155px;
+    opacity: 0;
+    z-index: 20;
+}
+
+.back_profil {
+    position: absolute;
+    bottom: 1.2rem;
+    right: 2rem;
+    width: 2rem;
+    height: 2rem;
+    background: transparent;
+    border: 0.15rem solid var(--main-color);
+    border-radius: 0.3rem;
+    font-size: 1.1rem;
+    color: var(--main-color);
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+}
+
+.back_profil:hover {
+    background: var(--main-color);
+    color: var( --white-color);
+}
+
+.back_profil p {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%) scale(0.5);
+    font-size: 1rem;
+    opacity: 0;
+    transition: 0.5s;
+    color: var(--main-color);
+}
+
+.back_profil:hover p {
+    opacity: 1;
+    transform: translateX(-50%) scale(1);
+    top: -1.8rem;
 }
