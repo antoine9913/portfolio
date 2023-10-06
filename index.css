@@ -9,7 +9,7 @@
 
 :root {
     --bg-color: #081B29;
-    --main-color: #FFB777;
+    --main-color: #EFBf93;
     --text-color: #333;
     --second-text-color: #555;
     --white-color: #FFF;
@@ -145,7 +145,7 @@ body {
 }
 
 .profile_page p {
-    text-align: justify;
+    text-align: center;
 }
 
 .profile_page .btn_box {
