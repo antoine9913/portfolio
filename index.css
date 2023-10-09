@@ -578,4 +578,8 @@ body {
         text-align: center;
     }
 
+    .portfolio_box .info_box p:nth-of-type(2) {
+        font-size: 0.9rem;
+    }
+
 }
