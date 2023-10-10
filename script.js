@@ -4,6 +4,13 @@ pageTurnBtn.forEach((el, index) => {
     el.onclick = () => {
         const pageTurnId = el.getAttribute('data-page');
         const pageTurn = document.getElementById(pageTurnId);
+        
+        pageTurn.addEventListener("click", () => {
+            window.scrollTo({
+              top,
+              behavior: "smooth",
+            });
+          });
 
         if (pageTurn.classList.contains('turn')) {
             pageTurn.classList.remove('turn');
@@ -19,6 +26,7 @@ pageTurnBtn.forEach((el, index) => {
         }
     }
 })
+
 
 const pages = document.querySelectorAll('.book_page.page_right');
 const contactMeBtn = document.querySelector('.btn.contact_me');
