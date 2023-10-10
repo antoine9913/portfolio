@@ -252,7 +252,7 @@ body {
     position: absolute;
     top: 50%;
     right: -32px;
-
+    
 }
 
 .book .navbar .navbar_btn {    
@@ -585,7 +585,7 @@ body {
         font-size: 0.9rem;
     }
 
-
+/* 
 .show-navigation {
     position: sticky;
     top: 39rem;
@@ -621,7 +621,7 @@ body {
 
 .show-navigation .logo_3 {
     animation: chevron-animate 1s 0.5s infinite ease-in-out;
-}
+} */
 
 
 }
