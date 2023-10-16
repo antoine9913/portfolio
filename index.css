@@ -105,6 +105,8 @@ body {
 
 .profile_page img {
     max-width: 180px;
+    width: auto;
+    height: auto;
     border-radius: 50%;
     border: 0.25rem solid var(--main-color);
     margin-bottom: 0.8rem;
@@ -331,6 +333,7 @@ body {
 
 .portfolio_box .img_box img {
     width: 100%;
+    height: auto;
     object-fit: cover;
     transition: 0.5s ease;
 }
