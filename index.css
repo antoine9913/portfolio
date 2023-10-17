@@ -152,6 +152,8 @@ body {
 
 .profile_page .btn_box {
     margin-top: 1.2rem;
+    display: flex;
+    flex-direction: column;
 }
 
 .btn {
@@ -407,13 +409,6 @@ body {
 
 .contact_box .btn {
     cursor: pointer;
-}
-
-.contact_box #email {
-    position: absolute;
-    left: 155px;
-    opacity: 0;
-    z-index: 20;
 }
 
 .back_profil {
